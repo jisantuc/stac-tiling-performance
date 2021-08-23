@@ -1,0 +1,53 @@
+{
+  "id": "public cog 1",
+  "stac_version": "1.0.0",
+  "stac_extensions": [],
+  "type": "Feature",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -15.0002052,
+          28.9282827
+        ],
+        [
+          -15.0002033,
+          27.9371483
+        ],
+        [
+          -13.8842036,
+          27.9326277
+        ],
+        [
+          -13.8737609,
+          28.9235723
+        ],
+        [
+          -15.0002052,
+          28.9282827
+        ]
+      ]
+    ]
+  },
+  "bbox": [
+    -15.002052,
+    27.9326277,
+    -13.8737609,
+    28.9282827
+  ],
+  "links": [],
+  "assets": {
+    "data": {
+      "href": "s3://rasterfoundry-production-data-us-east-1/demo-cogs/s2-canary-islands-rgb-cog.tif",
+      "title": "RGB COG from Sentinel-2 bands",
+      "description": "Composite image from bands 4, 3, and 2 of a Sentinel-2 image over the Canary Islands",
+      "roles": ["data"],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized" 
+    }
+  },
+  "collection": "my-collection",
+  "properties": {
+    "datetime": "2021-06-16T00:00:00Z"
+  }
+}

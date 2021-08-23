@@ -1,0 +1,34 @@
+{
+    "assets": {},
+    "description": "My first STAC collection",
+    "extent": {
+        "spatial": {
+            "bbox": [
+                [
+                    0,
+                    0,
+                    10,
+                    10
+                ]
+            ]
+        },
+        "temporal": {
+            "interval": [
+                [
+                    null,
+                    null
+                ]
+            ]
+        }
+    },
+    "id": "my-collection",
+    "keywords": [],
+    "license": "proprietary",
+    "links": [],
+    "properties": {},
+    "providers": [],
+    "stac_extensions": [],
+    "stac_version": "1.0.0",
+    "summaries": {},
+    "type": "Collection"
+}

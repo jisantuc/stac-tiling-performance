@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -eu
+
+docker-compose up -d
+
+sleep 10
+
+echo "Creating collection"
+collectionId=$(cat data/collection.json | http :9090/collections | jq .id | sed 's/\"//g')
+echo "Created collection ${collectionId}"
+
+echo "Creating an item in collection ${collectionId}"
+itemId="$(cat data/item-1.json | http :9090/collections/${collectionId}/items | jq .id)"
