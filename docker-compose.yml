@@ -44,9 +44,13 @@ services:
     expose:
       - 8000
     links:
-      - franklin:stac.service.internal
+      - franklin:franklin.service.internal
+    volumes:
+      - $HOME/.aws:/root/.aws
     environment:
       - AWS_DEFAULT_PROFILE
+      - AWS_PROFILE
       - AWS_REGION
       - PORT=8000
       - WORKERS_PER_CORE=1
+
