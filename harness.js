@@ -25,7 +25,7 @@ function titilerize(url) {
   );
   const [_, collection, item, z, x, y] = url.match(extractor);
   const stacItemUrl = encodeURI(`http://franklin.service.internal:9090/collections/${collection}/items/${item}`);
-  return `http://titiler.service.internal:8000/stac/tiles/WebMercatorQuad/${z}/${x}/${y}?url=${stacItemUrl}&assets=data-http`;
+  return `http://titiler.service.internal:8000/stac/tiles/WebMercatorQuad/${z}/${x}/${y}?url=${stacItemUrl}&assets=data`;
 }
 
 export function setup() {
