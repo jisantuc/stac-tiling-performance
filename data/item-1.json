@@ -36,14 +36,32 @@
     -13.8737609,
     28.9282827
   ],
-  "links": [],
+  "links": [
+    {
+      "href": "http://localhost:9090",
+      "rel": "root",
+      "type": "application/json",
+      "title": "Welcome to Franklin"
+    }
+  ],
   "assets": {
     "data": {
       "href": "s3://rasterfoundry-production-data-us-east-1/demo-cogs/s2-canary-islands-rgb-cog.tif",
       "title": "RGB COG from Sentinel-2 bands",
       "description": "Composite image from bands 4, 3, and 2 of a Sentinel-2 image over the Canary Islands",
-      "roles": ["data"],
-      "type": "image/tiff; application=geotiff; profile=cloud-optimized" 
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
+    },
+    "dataHttp": {
+      "href": "https://rasterfoundry-production-data-us-east-1.s3.amazonaws.com/demo-cogs/s2-canary-islands-rgb-cog.tif",
+      "title": "RGB COG from Sentinel-2 bands",
+      "description": "Composite image from bands 4, 3, and 2 of a Sentinel-2 image over the Canary Islands",
+      "roles": [
+        "data"
+      ],
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized"
     }
   },
   "collection": "my-collection",
