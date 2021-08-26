@@ -1,11 +1,11 @@
 #!/bin/bash
 
-AWS_REGION=us-east-1 \
-    AWS_PROFILE=raster-foundry \
-    AWS_DEFAULT_PROFILE=raster-foundry \
+AWS_REGION="${AWS_REGION:-us-east-1}" \
+    AWS_PROFILE="${AWS_PROFILE:-raster-foundry}" \
+    AWS_DEFAULT_PROFILE="${AWS_PROFILE:-raster-foundry}" \
     HAR_FILE=data/tile-requests.har \
     TEST_NAME=first-try \
-    TILING_BACKEND="${TILING_BACKEND:-franklin}"
+    TILING_BACKEND="${TILING_BACKEND:-franklin}" \
     docker-compose \
     -f docker-compose.yml \
     -f docker-compose.test.yml \
