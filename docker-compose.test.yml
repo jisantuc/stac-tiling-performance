@@ -1,0 +1,40 @@
+version: "3.8"
+services:
+  k6:
+    image: loadimpact/k6
+    environment:
+      - HAR_FILE
+      - TEST_NAME
+      - TILING_BACKEND
+    volumes:
+      - ./:/scripts/
+    command: run -o cloud /scripts/harness.js
+    links:
+      - influx:influx.service.internal
+      - franklin:franklin.service.internal
+      - titiler:titiler.service.internal
+  influx:
+    image: influxdb:1.7
+    environment:
+      - INFLUXDB_HTTP_AUTH_ENABLED=false
+    ports:
+      - 8086:8086
+      - 2003:2003
+    volumes:
+      - influxdb:/var/lib/influxdb
+  grafana:
+    image: grafana/grafana
+    links:
+      - influx:influx.service.internal
+    ports:
+      - 3000:3000
+    volumes:
+      - grafana-storage:/var/lib/grafana
+  debug:
+    image: alpine/httpie
+    links:
+      - franklin:franklin.service.internal
+      - titiler:titiler.service.internal
+volumes:
+  influxdb:
+  grafana-storage:

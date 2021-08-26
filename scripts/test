@@ -1,0 +1,13 @@
+#!/bin/bash
+
+AWS_REGION=us-east-1 \
+    AWS_PROFILE=raster-foundry \
+    AWS_DEFAULT_PROFILE=raster-foundry \
+    HAR_FILE=data/tile-requests.har \
+    TEST_NAME=first-try \
+    TILING_BACKEND="${TILING_BACKEND:-franklin}"
+    docker-compose \
+    -f docker-compose.yml \
+    -f docker-compose.test.yml \
+    run k6 \
+    run -o influxdb=http://influx.service.internal:8086/k6 /scripts/harness.js
