@@ -5,7 +5,7 @@ if (!__ENV.HAR_FILE) fail("HAR_FILE must be set!");
 
 export const options = {
   vus: 20,
-  duration: "2m",
+  duration: "10m",
   discardResponseBodies: true,
   maxRedirects: 0,
   ext: {
@@ -52,7 +52,7 @@ export function setup() {
       url,
       null,
       {
-        tags: { serviceName: franklin ? "Franklin" : "TiTiler" },
+        tags: { serviceName: tilingBackend },
       },
     ]);
   });
